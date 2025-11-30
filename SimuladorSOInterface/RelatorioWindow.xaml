@@ -1,0 +1,25 @@
+﻿<Window x:Class="SimuladorSOInterface.RelatorioWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Relatório Completo de Métricas" Height="600" Width="800"
+        WindowStartupLocation="CenterScreen"
+        Icon="/Image/Icone.ico">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Margin="10">
+            <TextBlock Name="txtRelatorio" 
+                       FontFamily="Consolas" 
+                       FontSize="12" 
+                       TextWrapping="Wrap" 
+                       VerticalAlignment="Top" 
+                       HorizontalAlignment="Left"/>
+        </ScrollViewer>
+
+        <Button Grid.Row="1" Content="Fechar" Width="100" Margin="10" Click="Fechar_Click"/>
+    </Grid>
+</Window>

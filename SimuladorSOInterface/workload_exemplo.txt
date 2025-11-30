@@ -1,0 +1,139 @@
+# ===========================
+# WORKLOAD PARA SIMULADOR DE SO
+# ===========================
+
+# ---- Configurações do início da simulação ----
+SET_SEED 1234
+SET_QUANTUM 4
+SET_ESCALONADOR RR
+SET_TAMANHO_PAGINA 1024
+SET_FRAMES 16
+
+# =======================
+# 1. Processos
+# =======================
+
+# Criar processos (PID simbólico + prioridade)
+CRIAR_PROCESSO P1 3
+CRIAR_PROCESSO P2 1
+CRIAR_PROCESSO P3 2
+CRIAR_PROCESSO P4 4
+CRIAR_PROCESSO P5 1
+CRIAR_PROCESSO P6 3
+CRIAR_PROCESSO P7 2
+
+# =======================
+# 2. Threads
+# =======================
+
+# Criar threads dentro de cada processo
+CRIAR_THREAD P1
+CRIAR_THREAD P1
+CRIAR_THREAD P2
+CRIAR_THREAD P3
+CRIAR_THREAD P4
+CRIAR_THREAD P4
+CRIAR_THREAD P5
+CRIAR_THREAD P6
+CRIAR_THREAD P7
+
+# =======================
+# 3. Memória
+# =======================
+
+# Solicitar alocação de memória (em bytes)
+MEM_ALOCAR P1 4096
+MEM_ALOCAR P2 2048
+MEM_ALOCAR P3 8192
+MEM_ALOCAR P4 1024
+MEM_ALOCAR P5 4096
+MEM_ALOCAR P6 2048
+MEM_ALOCAR P7 8192
+
+# Simular acessos de página
+MEM_ACESSO P1 0x0003
+MEM_ACESSO P1 0x0040
+MEM_ACESSO P2 0x000A
+MEM_ACESSO P3 0x0100
+MEM_ACESSO P4 0x0001
+MEM_ACESSO P5 0x0005
+MEM_ACESSO P6 0x000B
+MEM_ACESSO P7 0x0101
+
+# =======================
+# 4. CPU / Escalonamento
+# =======================
+
+# Processar ticks de CPU
+CPU_TICK 10
+CPU_TICK 10
+
+# Mudar escalonador em tempo de execução (opcional)
+SET_ESCALONADOR PRIORIDADE_PREEMPTIVO
+
+CPU_TICK 10
+
+# =======================
+# 5. Entrada / Saída
+# =======================
+
+# Requisição de I/O (processo, dispositivo, tempo)
+IO_REQ P1 DISCO 30
+IO_REQ P2 TECLADO 10
+IO_REQ P3 IMPRESSORA 40
+IO_REQ P4 DISCO 20
+IO_REQ P5 TECLADO 5
+IO_REQ P6 IMPRESSORA 35
+IO_REQ P7 DISCO 15
+
+# Processar ciclos de I/O
+IO_TICK 10
+IO_TICK 10
+IO_TICK 10
+
+# =======================
+# 6. Sistema de Arquivos
+# =======================
+
+# Criar arquivos
+ARQ_CRIAR /docs/arquivo1.txt
+ARQ_CRIAR /docs/arquivo2.txt
+ARQ_CRIAR /docs/arquivo3.txt
+ARQ_CRIAR /docs/arquivo4.txt
+ARQ_CRIAR /docs/arquivo5.txt
+
+# Escrever em arquivo (processo, caminho, tamanho)
+ARQ_ESCREVER P1 /docs/arquivo1.txt 200
+ARQ_ESCREVER P2 /docs/arquivo2.txt 100
+ARQ_ESCREVER P4 /docs/arquivo3.txt 50
+ARQ_ESCREVER P5 /docs/arquivo4.txt 300
+ARQ_ESCREVER P6 /docs/arquivo5.txt 150
+
+# Ler arquivo
+ARQ_LER P1 /docs/arquivo1.txt 150
+ARQ_LER P7 /docs/arquivo3.txt 40
+
+# Abrir e fechar arquivos
+ARQ_ABRIR P1 /docs/arquivo1.txt
+ARQ_ABRIR P5 /docs/arquivo4.txt
+ARQ_FECHAR P1 /docs/arquivo1.txt
+ARQ_FECHAR P5 /docs/arquivo4.txt
+
+# Apagar arquivo
+ARQ_APAGAR /docs/arquivo2.txt
+ARQ_APAGAR /docs/arquivo5.txt
+
+# =======================
+# 7. Finalização
+# =======================
+
+FINALIZAR P1
+FINALIZAR P2
+FINALIZAR P3
+FINALIZAR P4
+FINALIZAR P5
+FINALIZAR P6
+FINALIZAR P7
+
+# Gerar estatísticas ao final
+GERAR_METRICAS

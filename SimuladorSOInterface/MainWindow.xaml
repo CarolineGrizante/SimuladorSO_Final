@@ -1,0 +1,173 @@
+﻿<Window x:Class="SimuladorSOInterface.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Simulador de Sistema Operacional" Height="700" Width="1200"
+        WindowStartupLocation="CenterScreen"
+        Icon="/Image/Icone.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="200"/>
+        </Grid.RowDefinitions>
+
+        <!-- Menu Superior -->
+        <Menu Grid.Row="0">
+            <MenuItem Header="Arquivo">
+                <MenuItem Header="Carregar Workload" Click="CarregarWorkload_Click"/>
+                <MenuItem Header="Exportar Log" Click="ExportarLog_Click"/>
+                <Separator/>
+                <MenuItem Header="Sair" Click="Sair_Click"/>
+            </MenuItem>
+            <MenuItem Header="Simulação">
+                <MenuItem Header="Iniciar Simulador" Click="IniciarSimulador_Click"/>
+                <MenuItem Header="Executar Ciclo" Click="ExecutarCiclo_Click"/>
+                <MenuItem Header="Resetar" Click="Resetar_Click"/>
+            </MenuItem>
+            <MenuItem Header="Configurações">
+                <MenuItem Header="Algoritmo de Escalonamento" Click="ConfigurarEscalonador_Click"/>
+                <MenuItem Header="Quantum" Click="ConfigurarQuantum_Click"/>
+                <MenuItem Header="Memória" Click="ConfigurarMemoria_Click"/>
+            </MenuItem>
+
+            <MenuItem Header="Métricas">
+                <MenuItem Header="Gerar Relatório" Click="GerarRelatorio_Click"/>
+                <MenuItem Header="Estatísticas" Click="VerEstatisticas_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <!-- Área Principal -->
+        <TabControl Grid.Row="1" Margin="5">
+            <TabItem Header="Processos">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
+                        <Button Content="Criar Processo" Width="120" Margin="5" Click="CriarProcesso_Click"/>
+                        <Button Content="Finalizar Processo" Width="120" Margin="5" Click="FinalizarProcesso_Click"/>
+                        <Button Content="Atualizar" Width="100" Margin="5" Click="AtualizarProcessos_Click"/>
+                    </StackPanel>
+
+                    <DataGrid Grid.Row="1" Name="dgProcessos" AutoGenerateColumns="False" 
+                              IsReadOnly="True" Margin="5">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="PID" Binding="{Binding PID}" Width="60"/>
+                            <DataGridTextColumn Header="Estado" Binding="{Binding Estado}" Width="100"/>
+                            <DataGridTextColumn Header="Prioridade" Binding="{Binding PCB.Prioridade}" Width="80"/>
+                            <DataGridTextColumn Header="Tempo CPU" Binding="{Binding PCB.TempoTotalCPU}" Width="100"/>
+                            <DataGridTextColumn Header="Tempo Espera" Binding="{Binding PCB.TempoEspera}" Width="100"/>
+                            <DataGridTextColumn Header="Threads" Binding="{Binding PCB.ThreadsIDs.Count}" Width="80"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Escalonador">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Margin="10">
+                        <TextBlock Name="txtEscalonadorInfo" FontSize="14" FontWeight="Bold"/>
+                        <TextBlock Name="txtProcessoAtual" Margin="0,5,0,0"/>
+                        <TextBlock Name="txtTrocasContexto" Margin="0,5,0,0"/>
+                    </StackPanel>
+
+                    <GroupBox Grid.Row="1" Header="Fila de Prontos" Margin="10">
+                        <ListBox Name="lstFilaProntos" FontFamily="Consolas"/>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Memória">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Margin="10">
+                        <TextBlock Name="txtMemoriaInfo" FontSize="14"/>
+                        <TextBlock Name="txtFaltasPagina" Margin="0,5,0,0"/>
+                        <TextBlock Name="txtTLBInfo" Margin="0,5,0,0"/>
+                    </StackPanel>
+
+                    <DataGrid Grid.Row="1" Name="dgMolduras" AutoGenerateColumns="False" 
+                              IsReadOnly="True" Margin="10">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Moldura" Binding="{Binding NumeroMoldura}" Width="80"/>
+                            <DataGridTextColumn Header="Ocupada" Binding="{Binding Ocupada}" Width="80"/>
+                            <DataGridTextColumn Header="PID" Binding="{Binding PID}" Width="60"/>
+                            <DataGridTextColumn Header="Página" Binding="{Binding NumeroPagina}" Width="80"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Dispositivos I/O">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <GroupBox Grid.Row="0" Header="Dispositivos" Margin="10">
+                        <DataGrid Name="dgDispositivos" AutoGenerateColumns="False" IsReadOnly="True">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" Width="120"/>
+                                <DataGridTextColumn Header="Tipo" Binding="{Binding Tipo}" Width="100"/>
+                                <DataGridTextColumn Header="Ocupado" Binding="{Binding EstaOcupado}" Width="80"/>
+                                <DataGridTextColumn Header="Tempo Op." Binding="{Binding TempoOperacao}" Width="100"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </GroupBox>
+
+                    <GroupBox Grid.Row="1" Header="Interrupções" Margin="10">
+                        <ListBox Name="lstInterrupcoes" FontFamily="Consolas"/>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Sistema de Arquivos">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
+                        <Button Content="Criar Arquivo" Width="100" Margin="5" Click="CriarArquivo_Click"/>
+                        <Button Content="Criar Diretório" Width="100" Margin="5" Click="CriarDiretorio_Click"/>
+                        <Button Content="Atualizar" Width="100" Margin="5" Click="AtualizarArquivos_Click"/>
+                    </StackPanel>
+
+                    <ListBox Grid.Row="1" Name="lstArquivos" Margin="10" FontFamily="Consolas"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+        <!-- Log de Eventos -->
+        <GroupBox Grid.Row="2" Header="Log de Eventos" Margin="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
+                    <TextBox Name="txtLog" IsReadOnly="True" FontFamily="Consolas" 
+                             FontSize="10" TextWrapping="Wrap"/>
+                </ScrollViewer>
+
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
+                    <Button Content="Limpar Log" Width="100" Click="LimparLog_Click"/>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

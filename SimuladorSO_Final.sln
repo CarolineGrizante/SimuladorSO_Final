@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36518.9 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimuladorSOLogica", "SimuladorSOLogica\SimuladorSOLogica.csproj", "{9B1AC42C-CF60-4365-BCD5-E61D84056C04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimuladorSOInterface", "SimuladorSOInterface\SimuladorSOInterface.csproj", "{F1C304E2-8F07-4017-A57D-2994BCF55FB2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B1AC42C-CF60-4365-BCD5-E61D84056C04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B1AC42C-CF60-4365-BCD5-E61D84056C04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B1AC42C-CF60-4365-BCD5-E61D84056C04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B1AC42C-CF60-4365-BCD5-E61D84056C04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1C304E2-8F07-4017-A57D-2994BCF55FB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1C304E2-8F07-4017-A57D-2994BCF55FB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1C304E2-8F07-4017-A57D-2994BCF55FB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1C304E2-8F07-4017-A57D-2994BCF55FB2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D83B646B-2AB5-480C-8757-329B2B5CDC8D}
+	EndGlobalSection
+EndGlobal
