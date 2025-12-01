@@ -73,9 +73,9 @@ A pasta simulador contém **5 imagens** e **3 GIFs** demonstrando a execução e
 
 ![Tela principal do simulador](SimuladorFinal/img1.png)  
 *Figura 1 — Tela principal do simulador.*
+
 ![Opção arquivo](SimuladorFinal/img2.png)  
 *Figura 2 — Carregando o arquivo texto.*
-
 ![Simulação](SimuladorFinal/img3.png)  
 *Figura 3 — Executar ciclo para analisar um novo processo criado- processo 14.*
 
