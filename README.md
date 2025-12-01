@@ -104,7 +104,7 @@ Este simulador foi desenvolvido com os seguintes objetivos:
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/CarolineGrizante/SimuladorSO
+git clone https://github.com/CarolineGrizante/SimuladorSO_Final
 
 
 
