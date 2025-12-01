@@ -1,4 +1,4 @@
-# Simulador de Sistema Operacional — WPF (.NET)
+# Simulador SO com interface visual- WPF
 
 **⚠️ IMPORTANTE:**  
 Para que os processos carreguem e atualizem corretamente:  
