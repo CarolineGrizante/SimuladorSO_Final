@@ -1,4 +1,4 @@
-# Simulador SO com interface visual- WPF
+# Simulador SO com interface visual-> WPF
 
 **⚠️ IMPORTANTE:**  
 Essa versão contém uma interface visual
@@ -87,13 +87,13 @@ A pasta simulador contém **3 imagens** e **3 GIFs** demonstrando a execução e
 *Figura 5 — Gerando relatório.*
 
 ### Animações (GIFs)
-![Execução passo-a-passo](SimuladorFinal/gif1.gif)  
+![Execução passo-a-passo](SimuladorFinal/Gif11.gif)  
 *GIF 1 — Carregando o arquivo texto.*
 
-![Gerenciando um processo](SimuladorFinal/gif2.gif)  
+![Gerenciando um processo](SimuladorFinal/Gif12.gif)  
 *GIF 2 — Adicionando e gerenciando um novo processo.*
 
-![Relatório](SimuladorFinal/gif3.gif)  
+![Relatório](SimuladorFinal/Gif13.gif)  
 *GIF 3 — Gerando relatório.*
 
 ---
