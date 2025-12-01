@@ -4,7 +4,7 @@
 Essa versão contém uma interface visual
 
 Para que os processos carreguem e atualizem corretamente:  
-- **Carregue o arquivo TXT duas vezes** pelo menu **Arquivo → Carregar Configuração**.  
+- **Carregue o arquivo TXT duas vezes** pelo menu **Arquivo → Carregar Workload**.  
 - Para visualizar novos processos criados, vá em **Simulação → Executar Ciclo**.  
   Somente após executar um ciclo o novo processo aparecerá corretamente no **Escalonador**, **Memória** e no **Relatório Final**.  
 - O projeto **não permite a criação de threads**, apenas processos.
