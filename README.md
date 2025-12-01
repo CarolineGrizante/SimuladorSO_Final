@@ -69,7 +69,7 @@ Menu: **Métricas → Gerar Relatório**
 ---
 ## 📷 Imagens da Aplicação
 
-A pasta simulador contém **3 imagens** e **3 GIFs** demonstrando a execução e as telas do simulador. 
+A pasta simulador contém **5 imagens** e **3 GIFs** demonstrando a execução e as telas do simulador. 
 
 ![Tela principal do simulador](SimuladorFinal/img1.png)  
 *Figura 1 — Tela principal do simulador.*
