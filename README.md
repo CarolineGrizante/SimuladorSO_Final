@@ -73,7 +73,6 @@ A pasta simulador contém **5 imagens** e **3 GIFs** demonstrando a execução e
 
 ![Tela principal do simulador](SimuladorFinal/img1.png)  
 *Figura 1 — Tela principal do simulador.*
-
 ![Opção arquivo](SimuladorFinal/img2.png)  
 *Figura 2 — Carregando o arquivo texto.*
 
