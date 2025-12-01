@@ -78,10 +78,10 @@ A pasta simulador contém **3 imagens** e **3 GIFs** demonstrando a execução e
 *Figura 2 — Carregando o arquivo texto.*
 
 ![Simulação](SimuladorFinal/img3.png)  
-*Figura 3 — Executar ciclo para analisar um novo processo criado.*
+*Figura 3 — Executar ciclo para analisar um novo processo criado- processo 14.*
 
 ![Configurações](SimuladorFinal/img4.png)  
-*Figura 4 — Executar ciclo para analisar um novo processo criado.*
+*Figura 4 — Configurações do simulador.*
 
 ![Métricas](SimuladorFinal/img3.png)  
 *Figura 5 — Gerando relatório.*
