@@ -1,6 +1,7 @@
 # Simulador SO com interface visual- WPF
 
 **⚠️ IMPORTANTE:**  
+Essa versão contém uma interface visual
 Para que os processos carreguem e atualizem corretamente:  
 - **Carregue o arquivo TXT duas vezes** pelo menu **Arquivo → Carregar Configuração**.  
 - Para visualizar novos processos criados, vá em **Simulação → Executar Ciclo**.  
