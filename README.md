@@ -71,24 +71,30 @@ Menu: **Métricas → Gerar Relatório**
 
 A pasta simulador contém **3 imagens** e **3 GIFs** demonstrando a execução e as telas do simulador. 
 
-![Tela principal do simulador](Simulador/img1.png)  
-*Figura 1 — Carregando o arquivo texto.*
+![Tela principal do simulador](SimuladorFinal/img1.png)  
+*Figura 1 — Tela principal do simulador.*
 
-![Analise do simulador](Simulador/img2.png)  
-*Figura 2 — Como o simulador analisa o arquivo texto.*
+![Opção arquivo](SimuladorFinal/img2.png)  
+*Figura 2 — Carregando o arquivo texto.*
 
-![Relatório do simulador](Simulador/img3.png)  
-*Figura 3 — Relatório gerado pelo arquivo texto.*
+![Simulação](SimuladorFinal/img3.png)  
+*Figura 3 — Executar ciclo para analisar um novo processo criado.*
+
+![Configurações](SimuladorFinal/img4.png)  
+*Figura 4 — Executar ciclo para analisar um novo processo criado.*
+
+![Métricas](SimuladorFinal/img3.png)  
+*Figura 5 — Gerando relatório.*
 
 ### Animações (GIFs)
-![Execução passo-a-passo](Simulador/gif1.gif)  
+![Execução passo-a-passo](SimuladorFinal/gif1.gif)  
 *GIF 1 — Carregando o arquivo texto.*
 
-![Gerenciando um processo](Simulador/gif2.gif)  
+![Gerenciando um processo](SimuladorFinal/gif2.gif)  
 *GIF 2 — Adicionando e gerenciando um novo processo.*
 
-![Gerenciando uma thread](Simulador/gif3.gif)  
-*GIF 3 — Criando e gerenciando uma nova thread.*
+![Relatório](SimuladorFinal/gif3.gif)  
+*GIF 3 — Gerando relatório.*
 
 ---
 ## 🎯 Objetivo do Projeto
